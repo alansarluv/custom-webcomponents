@@ -1,19 +1,27 @@
 {
   "name": "custom-webcomponents",
-  "version": "1.0.0",
-  "description": "Collection of custom web components",
-  "main": "serv.js",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/custom-webcomponents/custom-webcomponents.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node serv.js"
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "author": "Alan Sarluv",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^2.6.2",
-    "express": "^4.17.1",
-    "mongoose": "^5.6.9",
-    "request": "^2.88.0"
-  }
+  "devDependencies": {
+    "@stencil/core": "^1.0.7"
+  },
+  "license": "MIT"
 }
