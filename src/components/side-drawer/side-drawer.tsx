@@ -1,15 +1,17 @@
 import { Component, h } from '@stencil/core';
 
 @Component({
-  tag: 'cwc-test-component'
+  tag: 'cwc-test-component',
+  styleUrl: "./side-drawer.css",
+  shadow: true
 })
 
 export class TestComponent {
   render() {
     return (
-      <div>
+      <aside>
         <h1>Test Create Component</h1>
-      </div>      
+      </aside>      
     );
   }
 }
