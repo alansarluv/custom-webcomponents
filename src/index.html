@@ -5,13 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
 
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .side-nav ul {
+      list-style: none;
+    }
+    .side-nav ul li {
+      margin: 1rem 0;
+    }
+    .side-nav a {
+      text-decoration: none;
+      color: black;
+    }
+
+</style>
+
   <script type="module" src="/build/custom-webcomponents.esm.js"></script>
   <script nomodule src="/build/custom-webcomponents.js"></script>
 
 </head>
 <body>
   
-  <cwc-test-component></cwc-test-component>
+  <cwc-test-component title="Menu sidebar" >
+    <nav class="side-nav">
+      <ul>
+        <li><a href="/">A link</a></li>
+        <li><a href="/">Another link</a></li>
+        <li><a href="/">A third link</a></li>
+      </ul>
+    </nav>
 
+  </cwc-test-component>
+
+
+  <script>
+    const sideDraws = document.querySelector('cwc-test-component');
+    setTimeout(() => {
+      // sideDraws.title = 'It changed!';
+    }, 3000);
+  </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'cwc-test-component',
@@ -7,10 +7,17 @@ import { Component, h } from '@stencil/core';
 })
 
 export class TestComponent {
+  @Prop({reflectToAttr: true}) title: string;
+
   render() {
     return (
       <aside>
-        <h1>Test Create Component</h1>
+        <header>
+          <h1>{ this.title }</h1>
+        </header>
+        <main>
+          <slot />
+        </main>
       </aside>      
     );
   }

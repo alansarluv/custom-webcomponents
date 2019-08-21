@@ -9,7 +9,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface CwcTestComponent {}
+  interface CwcTestComponent {
+    'title': string;
+  }
 }
 
 declare global {
@@ -26,7 +28,9 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface CwcTestComponent extends JSXBase.HTMLAttributes<HTMLCwcTestComponentElement> {}
+  interface CwcTestComponent extends JSXBase.HTMLAttributes<HTMLCwcTestComponentElement> {
+    'title'?: string;
+  }
 
   interface IntrinsicElements {
     'cwc-test-component': CwcTestComponent;
