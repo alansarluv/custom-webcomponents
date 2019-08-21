@@ -27,7 +27,7 @@
 
 </head>
 <body>
-  
+  <button id="btn-sidedraws">Open side menu</button>
   <cwc-test-component title="Menu sidebar" >
     <nav class="side-nav">
       <ul>
@@ -41,10 +41,15 @@
 
 
   <script>
+    const btnSideDraws = document.getElementById('btn-sidedraws');
     const sideDraws = document.querySelector('cwc-test-component');
-    setTimeout(() => {
-      // sideDraws.title = 'It changed!';
-    }, 3000);
-  </script>
+
+    btnSideDraws.addEventListener('click', () => {
+      if(!sideDraws.open){
+        sideDraws.open = true;
+      }
+    });
+
+</script>
 </body>
 </html>
