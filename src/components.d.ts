@@ -10,7 +10,8 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface CwcTestComponent {
-    'open': boolean;
+    'open': () => Promise<void>;
+    'opened': boolean;
     'title': string;
   }
 }
@@ -30,7 +31,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface CwcTestComponent extends JSXBase.HTMLAttributes<HTMLCwcTestComponentElement> {
-    'open'?: boolean;
+    'opened'?: boolean;
     'title'?: string;
   }
 

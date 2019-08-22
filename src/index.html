@@ -45,9 +45,8 @@
     const sideDraws = document.querySelector('cwc-test-component');
 
     btnSideDraws.addEventListener('click', () => {
-      if(!sideDraws.open){
-        sideDraws.open = true;
-      }
+      if(!sideDraws.opened)
+      sideDraws.open();
     });
 
 </script>
