@@ -14,6 +14,9 @@ export namespace Components {
     'opened': boolean;
     'title': string;
   }
+  interface CwcTooltipClick {
+    'text': string;
+  }
 }
 
 declare global {
@@ -24,8 +27,15 @@ declare global {
     prototype: HTMLCwcTestComponentElement;
     new (): HTMLCwcTestComponentElement;
   };
+
+  interface HTMLCwcTooltipClickElement extends Components.CwcTooltipClick, HTMLStencilElement {}
+  var HTMLCwcTooltipClickElement: {
+    prototype: HTMLCwcTooltipClickElement;
+    new (): HTMLCwcTooltipClickElement;
+  };
   interface HTMLElementTagNameMap {
     'cwc-test-component': HTMLCwcTestComponentElement;
+    'cwc-tooltip-click': HTMLCwcTooltipClickElement;
   }
 }
 
@@ -34,9 +44,13 @@ declare namespace LocalJSX {
     'opened'?: boolean;
     'title'?: string;
   }
+  interface CwcTooltipClick extends JSXBase.HTMLAttributes<HTMLCwcTooltipClickElement> {
+    'text'?: string;
+  }
 
   interface IntrinsicElements {
     'cwc-test-component': CwcTestComponent;
+    'cwc-tooltip-click': CwcTooltipClick;
   }
 }
 
