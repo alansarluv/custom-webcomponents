@@ -43,7 +43,8 @@ export class TestComponent {
         </div>
       );
     }
-    return (
+    return [
+      <div class="backdrop" onClick={this.onCloseSideDraws.bind(this)} />,
       <aside>
         <header>
           <h1>{ this.title }</h1>
@@ -57,7 +58,7 @@ export class TestComponent {
           {mainContent}
         </main>
       </aside>      
-    );
+    ];
   }
 }
 
