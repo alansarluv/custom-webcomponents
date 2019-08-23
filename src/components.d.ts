@@ -9,6 +9,11 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface CwcProgressBar {
+    'baseColor': string;
+    'fillColor': string;
+    'fillPrecent': number;
+  }
   interface CwcTestComponent {
     'open': () => Promise<void>;
     'opened': boolean;
@@ -22,6 +27,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLCwcProgressBarElement extends Components.CwcProgressBar, HTMLStencilElement {}
+  var HTMLCwcProgressBarElement: {
+    prototype: HTMLCwcProgressBarElement;
+    new (): HTMLCwcProgressBarElement;
+  };
+
   interface HTMLCwcTestComponentElement extends Components.CwcTestComponent, HTMLStencilElement {}
   var HTMLCwcTestComponentElement: {
     prototype: HTMLCwcTestComponentElement;
@@ -34,12 +45,18 @@ declare global {
     new (): HTMLCwcTooltipClickElement;
   };
   interface HTMLElementTagNameMap {
+    'cwc-progress-bar': HTMLCwcProgressBarElement;
     'cwc-test-component': HTMLCwcTestComponentElement;
     'cwc-tooltip-click': HTMLCwcTooltipClickElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface CwcProgressBar extends JSXBase.HTMLAttributes<HTMLCwcProgressBarElement> {
+    'baseColor'?: string;
+    'fillColor'?: string;
+    'fillPrecent'?: number;
+  }
   interface CwcTestComponent extends JSXBase.HTMLAttributes<HTMLCwcTestComponentElement> {
     'opened'?: boolean;
     'title'?: string;
@@ -49,6 +66,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'cwc-progress-bar': CwcProgressBar;
     'cwc-test-component': CwcTestComponent;
     'cwc-tooltip-click': CwcTooltipClick;
   }

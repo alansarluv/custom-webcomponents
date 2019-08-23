@@ -19,14 +19,14 @@
       text-decoration: none;
       color: black;
     }
-
-</style>
+  </style>
 
   <script type="module" src="/build/custom-webcomponents.esm.js"></script>
   <script nomodule src="/build/custom-webcomponents.js"></script>
 
 </head>
 <body>
+  <!-- sidedrawer -->
   <button id="btn-sidedraws">Open side menu</button>
   <cwc-test-component title="Menu sidebar" >
     <nav class="side-nav">
@@ -37,10 +37,15 @@
       </ul>
     </nav>
   </cwc-test-component>
+  <!-- sidedrawer -->
 
-  <p>
-    Let's test this new <cwc-tooltip-click text="Hi there i'm a content of this tooltip"> Tooltip </cwc-tooltip-click>
-  </p>
+  <!-- Tooltip -->
+  <p> Let's test this new <cwc-tooltip-click text="Hi there i'm a content of this tooltip"> Tooltip </cwc-tooltip-click> </p>
+  <!-- Tooltip -->
+
+  <!-- Progress bar -->
+  <cwc-progress-bar fillColor="green" baseColor="yellow" fillPrecent="60" type="default">Mihaa</cwc-progress-bar>
+  <!-- Progress bar -->
 
 
   <script>
