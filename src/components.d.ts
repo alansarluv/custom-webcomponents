@@ -10,9 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface CwcProgressBar {
-    'baseColor': string;
-    'fillColor': string;
-    'fillPrecent': number;
+    'basecolor': string;
+    'fillcolor': string;
+    'fillprecent': number;
   }
   interface CwcTestComponent {
     'open': () => Promise<void>;
@@ -53,9 +53,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface CwcProgressBar extends JSXBase.HTMLAttributes<HTMLCwcProgressBarElement> {
-    'baseColor'?: string;
-    'fillColor'?: string;
-    'fillPrecent'?: number;
+    'basecolor'?: string;
+    'fillcolor'?: string;
+    'fillprecent'?: number;
   }
   interface CwcTestComponent extends JSXBase.HTMLAttributes<HTMLCwcTestComponentElement> {
     'opened'?: boolean;

@@ -7,17 +7,19 @@ import { Component, h, Prop, Element } from '@stencil/core';
 })
 
 export class ProgressBar {
-  @Prop() fillColor: string;
-  @Prop() baseColor: string;
-  @Prop() fillPrecent: number;
+  @Prop({reflectToAttr: true}) fillcolor: string;
+  @Prop({reflectToAttr: true}) basecolor: string;
+  @Prop({reflectToAttr: true}) fillprecent: number;
 
-  @Element() fillElement: HTMLElement;
+  @Element() el: HTMLElement;
 
   render() {
-    return (
-      <div class="cwc-progress default">
-        <div class="cwc-progress-fill"></div>
+    const styleProgressBase = { 'background-color': this.basecolor }
+    const styleProgressFill = { 'background-color': this.fillcolor, 'width' : this.fillprecent+'%' }
+    return [
+      <div class="cwc-progress default" style={styleProgressBase}>
+        <div class="cwc-progress-fill" style={styleProgressFill}></div>
       </div>
-    )
+    ]
   }
 }
