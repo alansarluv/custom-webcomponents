@@ -14,10 +14,9 @@ export class ProgressBar {
   @Element() el: HTMLElement;
 
   render() {
-    const styleProgressBase = { 'background-color': this.basecolor }
     const styleProgressFill = { 'background-color': this.fillcolor, 'width' : this.fillprecent+'%' }
     return [
-      <div class="cwc-progress default" style={styleProgressBase}>
+      <div class="cwc-progress default" style={{backgroundColor: this.basecolor}}>
         <div class="cwc-progress-fill" style={styleProgressFill}></div>
       </div>
     ]
