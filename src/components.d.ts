@@ -9,6 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface CwcPophover {}
   interface CwcProgressBar {
     'basecolor': string;
     'fillcolor': string;
@@ -26,6 +27,12 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLCwcPophoverElement extends Components.CwcPophover, HTMLStencilElement {}
+  var HTMLCwcPophoverElement: {
+    prototype: HTMLCwcPophoverElement;
+    new (): HTMLCwcPophoverElement;
+  };
 
   interface HTMLCwcProgressBarElement extends Components.CwcProgressBar, HTMLStencilElement {}
   var HTMLCwcProgressBarElement: {
@@ -45,6 +52,7 @@ declare global {
     new (): HTMLCwcTooltipClickElement;
   };
   interface HTMLElementTagNameMap {
+    'cwc-pophover': HTMLCwcPophoverElement;
     'cwc-progress-bar': HTMLCwcProgressBarElement;
     'cwc-test-component': HTMLCwcTestComponentElement;
     'cwc-tooltip-click': HTMLCwcTooltipClickElement;
@@ -52,6 +60,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface CwcPophover extends JSXBase.HTMLAttributes<HTMLCwcPophoverElement> {}
   interface CwcProgressBar extends JSXBase.HTMLAttributes<HTMLCwcProgressBarElement> {
     'basecolor'?: string;
     'fillcolor'?: string;
@@ -66,6 +75,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'cwc-pophover': CwcPophover;
     'cwc-progress-bar': CwcProgressBar;
     'cwc-test-component': CwcTestComponent;
     'cwc-tooltip-click': CwcTooltipClick;
