@@ -9,6 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface CwcDigitalClock {}
   interface CwcPophover {}
   interface CwcProgressBar {
     'basecolor': string;
@@ -27,6 +28,12 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLCwcDigitalClockElement extends Components.CwcDigitalClock, HTMLStencilElement {}
+  var HTMLCwcDigitalClockElement: {
+    prototype: HTMLCwcDigitalClockElement;
+    new (): HTMLCwcDigitalClockElement;
+  };
 
   interface HTMLCwcPophoverElement extends Components.CwcPophover, HTMLStencilElement {}
   var HTMLCwcPophoverElement: {
@@ -52,6 +59,7 @@ declare global {
     new (): HTMLCwcTooltipClickElement;
   };
   interface HTMLElementTagNameMap {
+    'cwc-digital-clock': HTMLCwcDigitalClockElement;
     'cwc-pophover': HTMLCwcPophoverElement;
     'cwc-progress-bar': HTMLCwcProgressBarElement;
     'cwc-test-component': HTMLCwcTestComponentElement;
@@ -60,6 +68,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface CwcDigitalClock extends JSXBase.HTMLAttributes<HTMLCwcDigitalClockElement> {}
   interface CwcPophover extends JSXBase.HTMLAttributes<HTMLCwcPophoverElement> {}
   interface CwcProgressBar extends JSXBase.HTMLAttributes<HTMLCwcProgressBarElement> {
     'basecolor'?: string;
@@ -75,6 +84,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'cwc-digital-clock': CwcDigitalClock;
     'cwc-pophover': CwcPophover;
     'cwc-progress-bar': CwcProgressBar;
     'cwc-test-component': CwcTestComponent;

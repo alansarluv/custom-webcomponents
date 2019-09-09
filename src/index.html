@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Stencil Component Starter</title>
 
-  <style>
-    body {
-      font-family: sans-serif;
-    }
-    .side-nav ul {
-      list-style: none;
-    }
-    .side-nav ul li {
-      margin: 1rem 0;
-    }
-    .side-nav a {
-      text-decoration: none;
-      color: black;
-    }
-  </style>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .side-nav ul {
+        list-style: none;
+      }
+      .side-nav ul li {
+        margin: 1rem 0;
+      }
+      .side-nav a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
 
-  <script type="module" src="/build/custom-webcomponents.esm.js"></script>
-  <script nomodule src="/build/custom-webcomponents.js"></script>
+    <script type="module" src="/build/custom-webcomponents.esm.js"></script>
+    <script nomodule src="/build/custom-webcomponents.js"></script>
 
-</head>
-<body>
-  <!-- sidedrawer -->
-  <button id="btn-sidedraws">Open side menu</button>
-  <cwc-test-component title="Menu sidebar" >
-    <nav class="side-nav">
-      <ul>
-        <li><a href="/">A link</a></li>
-        <li><a href="/">Another link</a></li>
-        <li><a href="/">A third link</a></li>
-      </ul>
-    </nav>
-  </cwc-test-component>
-  <!-- sidedrawer -->
+  </head>
+  <body>
+    <!-- sidedrawer -->
+    <button id="btn-sidedraws">Open side menu</button>
+    <cwc-test-component title="Menu sidebar" >
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">A link</a></li>
+          <li><a href="/">Another link</a></li>
+          <li><a href="/">A third link</a></li>
+        </ul>
+      </nav>
+    </cwc-test-component>
+    <!-- sidedrawer -->
 
-  <!-- Tooltip -->
-  <p> Let's test this new <cwc-tooltip-click text="Hi there i'm a content of this tooltip"> Tooltip </cwc-tooltip-click> </p>
-  <!-- Tooltip -->
+    <!-- Tooltip -->
+    <p> Let's test this new <cwc-tooltip-click text="Hi there i'm a content of this tooltip"> Tooltip </cwc-tooltip-click> </p>
+    <!-- Tooltip -->
 
-  <!-- Progress bar -->
-  <cwc-progress-bar fillcolor="green" basecolor="#02F" fillprecent="60" type="default">Mihaa</cwc-progress-bar>
-  <!-- Progress bar -->
+    <!-- Progress bar -->
+    <cwc-progress-bar fillcolor="green" basecolor="#02F" fillprecent="60" type="default">Mihaa</cwc-progress-bar>
+    <!-- Progress bar -->
 
-  <!-- Progress bar -->
-  <cwc-pophover>Pop hover slots</cwc-pophover>
-  <!-- Progress bar -->
+    <!-- Progress bar -->
+    <cwc-pophover>Pop hover slots</cwc-pophover>
+    <!-- Progress bar -->
 
+    <!-- Digital clock -->
+    <cwc-digital-clock />
+    <!-- Digital clock -->
 
-  <script>
-    const btnSideDraws = document.getElementById('btn-sidedraws');
-    const sideDraws = document.querySelector('cwc-test-component');
+    <script>
+      const btnSideDraws = document.getElementById('btn-sidedraws');
+      const sideDraws = document.querySelector('cwc-test-component');
 
-    btnSideDraws.addEventListener('click', () => {
-      if(!sideDraws.opened)
-      sideDraws.open();
-    });
-
-</script>
-</body>
+      btnSideDraws.addEventListener('click', () => {
+        if(!sideDraws.opened)
+        sideDraws.open();
+      });
+    </script>
+  </body>
 </html>
