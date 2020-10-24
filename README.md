@@ -37,4 +37,9 @@ npm test
 All the custom components tags use prefix `cwc-` in the component name (ex: `<cwc-datepicker>`).
 cwc- means custom-webcomponents
 
+## List Components
 
+1. Digital clock
+2. Tooltip
+3. Progress bar
+4. Sidebar
