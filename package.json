@@ -1,7 +1,9 @@
 {
   "name": "custom-webcomponents-sarluv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "repository": "https://github.com/alansarluv/custom-webcomponents.git",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
